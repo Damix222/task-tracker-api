@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from app.schemas import TaskCreate, TaskResponse
 
 app = FastAPI()
 
@@ -10,17 +11,17 @@ def check_status():
     return {"message": "Task Tracker API is running"}
 
 
-@app.get("/tasks")
+@app.get("/tasks", response_model=list[TaskResponse])
 def get_tasks():
     return tasks
 
 
-@app.post("/tasks")
-def create_task(title: str, description: str):
+@app.post("/tasks", response_model=TaskResponse, status_code=201)
+def create_task(task_data: TaskCreate):
     task = {
         "id": len(tasks) + 1,
-        "title": title,
-        "description": description,
+        "title": task_data.title,
+        "description": task_data.description,
         "completed": False
     }
 
@@ -29,7 +30,7 @@ def create_task(title: str, description: str):
     return task
 
 
-@app.get("/tasks/{task_id}")
+@app.get("/tasks/{task_id}", response_model=TaskResponse)
 def read_task(task_id: int):
     for task in tasks:
         if task["id"] == task_id:
