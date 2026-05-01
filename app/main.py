@@ -1,5 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from app.schemas import TaskCreate, TaskResponse
+from app.database import engine
+from app import models
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
