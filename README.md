@@ -47,7 +47,7 @@ task_tracker_api/
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone <>
+git clone <https://github.com/Damix222/task-tracker-api>
 cd task_tracker_api
 ```
 
