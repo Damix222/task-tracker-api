@@ -99,15 +99,34 @@ http://127.0.0.1:8000/docs
 
 ## Скриншоты
 
-Примеры:
+### Swagger UI
 
-```text
-images/swagger_main.png
-images/create_task.png
-images/get_tasks.png
-images/update_task.png
-images/delete_task.png
-```
+![Swagger UI](images/swagger_main.png)
+
+### Создание задачи
+
+![Create task](images/create_task.png)
+
+### Получение списка задач
+
+![Get tasks](images/get_tasks.png)
+
+### Обновление задачи
+
+![Update task](images/update_task.png)
+
+### Изменение статуса задачи
+
+![Complete task](images/complete_task.png)
+
+### Удаление задачи
+
+![Delete task](images/delete_task.png)
+
+### Ошибка 404
+
+![Task not found](images/not_found.png)
+
 
 ## Что я изучил
 
