@@ -11,3 +11,11 @@ class TaskResponse(BaseModel):
     title: str
     description: str | None = None
     completed: bool 
+
+
+class TaskUpdate(BaseModel):
+    title: str
+    description: str | None = None
+    completed: bool
+
+        
